@@ -31,9 +31,10 @@ module.exports = {
       host: DEPLOY_HOST,
       ref: DEPLOY_REF,
       repo: REPO_URL,
-      path: `/home/${DEPLOY_USER}/nodejs-pm2-deploy`,
+      path: `/home/${DEPLOY_USER}/nodejs-pm2-deploy/`,
       'pre-deploy-local': `
-        scp -r ./backend/.env.production ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/backend/.env;
+        echo 'Deploying to production...';
+        scp -r ./backend/.env.production orly@158.160.149.97:/home/orly/nodejs-pm2-deploy/backend/source/backend/.env;
       `,
       'post-deploy': `
         cd backend && npm install && pm2 startOrRestart ecosystem.config.js --env production;
