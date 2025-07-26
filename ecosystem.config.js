@@ -33,7 +33,6 @@ module.exports = {
       repo: REPO_URL,
       path: `/home/${DEPLOY_USER}/nodejs-pm2-deploy`,
       'pre-deploy-local': `
-        echo 'Deploying to production...';
         scp -r ./backend/.env.production ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/backend/.env;
       `,
       'post-deploy': `
