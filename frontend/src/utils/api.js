@@ -139,6 +139,6 @@ class Api {
   }
   }
   // Замените на адрес вашего бэкенда
-  const api = new Api('http://158.160.149.97');
+  const api = new Api('https://www.api.orly.website/');
 
   export default api;
