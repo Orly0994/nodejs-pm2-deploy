@@ -31,7 +31,7 @@ module.exports = {
       host: DEPLOY_HOST,
       ref: DEPLOY_REF,
       repo: REPO_URL,
-      path: `/home/${DEPLOY_USER}/mesto`,
+      path: `/home/${DEPLOY_USER}/nodejs-pm2-deploy`,
       'pre-deploy-local': `
         echo 'Deploying to production...';
         scp -r ./backend/.env.production ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/backend/.env;
