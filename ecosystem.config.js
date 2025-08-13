@@ -1,7 +1,7 @@
 require('dotenv').config({ path: '.env.deploy' });
 
 const {
-  DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, DEPLOY_REF = 'origin/main', REPO_URL, DEPLOY_PORT
+  DEPLOY_USER, DEPLOY_HOST, DEPLOY_REF = 'origin/main', REPO_URL, DEPLOY_PORT
 } = process.env;
 
 module.exports = {
