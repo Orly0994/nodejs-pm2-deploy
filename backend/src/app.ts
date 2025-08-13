@@ -16,8 +16,8 @@ mongoose.connect(DB_ADDRESS);
 // Только для локальных тестов. Не используйте это в продакшене
 app.use(cors({
   origin: [
-    'https://www.developerorly.ru',
-    'https://www.api.developerorly.ru',
+    'https://api.orly.nomorepartiessbs.ru',
+    'https://orly.nomorepartiessbs.ru',
   ],
 }));
 app.get('/crash-test', () => {
