@@ -14,12 +14,7 @@ const app = express();
 mongoose.connect(DB_ADDRESS);
 
 // Только для локальных тестов. Не используйте это в продакшене
-app.use(cors({
-  origin: [
-    'https://api.orly.nomorepartiessbs.ru',
-    'https://orly.nomorepartiessbs.ru',
-  ],
-}));
+app.use(cors());
 app.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
