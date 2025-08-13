@@ -17,10 +17,9 @@ module.exports = {
     {
       name: 'frontend',
       script: 'serve',
-      args: ['-s', 'frontend/build', '-l', '80'],
       env_production: {
         PM2_SERVE_PATH: 'frontend/build',
-        PM2_SERVE_PORT: 80,
+        PM2_SERVE_PORT: 3001,
         NODE_ENV: 'production'
       }
     }
@@ -32,7 +31,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: REPO_URL,
       path: `/home/${DEPLOY_USER}/nodejs-pm2-deploy/`,
-      'pre-deploy-local': 'echo "Deploying to production..."; scp -r ./backend/.env.production orly@158.160.149.97:/home/orly/nodejs-pm2-deploy/backend/source/backend/.env;',
+      'pre-deploy-local': 'echo "Deploying to production..."; scp -r ./backend/.env.production orly@158.160.149.97:/home/orly/nodejs-pm2-deploy/current/backend/.env;',
       'post-deploy': 'cd backend && npm install && pm2 startOrRestart ecosystem.config.js --env production; cd ../frontend && npm install && npm run build && pm2 startOrRestart ecosystem.config.js --env production; pm2 save;'
     }
   }

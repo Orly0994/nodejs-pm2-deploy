@@ -139,6 +139,6 @@ class Api {
   }
   }
   // Замените на адрес вашего бэкенда
-  const api = new Api('https://www.api.orly.website/');
+  const api = new Api('https://api.orly.nomorepartiessbs.ru/');
 
   export default api;
